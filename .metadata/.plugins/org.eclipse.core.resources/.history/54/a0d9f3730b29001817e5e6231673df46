@@ -1,0 +1,127 @@
+/*
+
+ * main.c
+ *
+ *  Created on: Feb 17, 2018
+ *      Author: mohragab
+ */
+#include "Dio.h"
+#include"Macros.h"
+#include"Std_Types.h"
+#include"util/delay.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include"util/delay.h"
+
+typedef struct{
+	u32 first_delay;
+	u32 priodicity;
+	void (*ptrfun)(void);
+}TASK_TYPE;
+TASK_TYPE TASK1;
+TASK_TYPE TASK2;
+void LED_1000MS(void);
+void LED_500MS(void);
+TASK_TYPE * ARR_TASK[2];
+u16 ovf_count=0;
+/*u16 LED_4000MS=0;
+u16 LED_1000MS =0;
+u16 LED_500MS=0;
+u16 LED_250MS=0;*/
+u8 i;
+
+
+int main(void)
+{
+
+	Dio_vidSetPinDirection(Dio_PORTB,0,STD_HIGH);
+	Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);
+	Dio_vidSetPinDirection(Dio_PORTB,1,STD_HIGH);
+	Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+	Dio_vidSetPinDirection(Dio_PORTB,2,STD_HIGH);
+	Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+	Dio_vidSetPinDirection(Dio_PORTB,3,STD_HIGH);
+	Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+	TCCR0=0b00000001;//no prescaler 1024
+	TCNT0=0;
+	setbit(TIMSK,0); //ENABLE TIMER OVERFLOW//PIE enable
+	setbit(SREG,7);
+	//TASK1
+	TASK1.first_delay=0;
+	TASK1.priodicity=1000;
+	TASK1.ptrfun=LED_1000MS;
+	//TASK2
+	TASK2.first_delay=0;
+	TASK2.priodicity=500;
+	TASK2.ptrfun=LED_500MS;
+	ARR_TASK[0]=&TASK1;
+	ARR_TASK[1]=&TASK2;
+
+	while(1);
+
+	return 0;
+
+}
+
+void LED_1000MS(void)
+{
+	TOGGLE_BIT(PORTB,0);
+}
+
+void LED_500MS(void)
+{
+	TOGGLE_BIT(PORTB,0);
+}
+
+/*ISR(TIMER0_OVF_vect)
+{
+	ovf_count++;
+	if(ovf_count==32)
+	{
+		ovf_count=0;
+		TCNT0=192;
+		LED_1000MS++;
+		if(LED_1000MS==1000)
+		{
+			LED_1000MS = 0;
+			TOGGLE_BIT(PORTB,0);
+
+		}
+		LED_500MS++;
+		if(LED_500MS==500)
+		{
+			LED_500MS = 0;
+			TOGGLE_BIT(PORTB,1);
+
+		}
+		LED_4000MS++;
+		if(LED_4000MS==4000)
+		{
+			LED_4000MS = 0;
+			TOGGLE_BIT(PORTB,2);
+		}
+
+		LED_250MS++;
+		if(LED_250MS==250)
+		{
+			LED_250MS = 0;
+			TOGGLE_BIT(PORTB,3);
+		}
+	}
+}*/
+
+ISR(TIMER0_OVF_vect)
+{
+	ovf_count++;
+	if(ovf_count==32)
+	{
+		ovf_count=0;
+		TCNT0=192;
+		for(i=0;i<2;i++)
+		{
+
+		}
+	}
+}

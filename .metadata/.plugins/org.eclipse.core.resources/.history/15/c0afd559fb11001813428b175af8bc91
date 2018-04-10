@@ -1,0 +1,92 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 9, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include <util/delay.h>
+#include "LCD_Interface.h"
+#include "key_PAD_Interface.h"
+#include <util/delay.h>
+#include <stdio.h>
+u8 sum(u8,u8);
+//u32 operation(u32 [],u8);
+int main(void)
+{
+	u32 result=0,h=0,t=0,o=0,T=0;
+	u8 sign;
+	u8 x=0;
+	u8 y=0;
+	//u32 val[2]={0};
+	u8 pressed_key;
+	keypad_vidinit();
+	lcd_vidinit();
+	_delay_ms(2);
+	pressed_key=0xff;
+
+	while (1)
+	{
+	  do
+	  {
+		 pressed_key= key_PAD_U8Get_Key();
+		 _delay_ms(100);
+		 pressed_key=key_PAD_U8Get_Key();
+	  }while(pressed_key==0xff);
+
+	  if((pressed_key>=0)&&(pressed_key<=9))
+	  {
+        pressed_key+=0x30;
+        x=pressed_key;
+        y=pressed_key;
+	  }
+
+	  lcd_vidwritechar(pressed_key);
+	  sign=pressed_key;
+	  switch(sign)
+	  {
+	  case'+':
+		  result=sum(x,y);
+		  break;
+	  case'=':
+		  T=((result/1000)%10);
+		  h=((result/100)%10);
+		  t=((result/10)%10);
+		  o=result%10;
+		  lcd_vidwritechar(T+'0');
+		  lcd_vidwritechar(h+'0');
+		  lcd_vidwritechar(t+'0');
+		  lcd_vidwritechar(o+'0');
+		  break;
+	  }
+
+	}
+
+
+   return 0;
+}
+
+/*u32 operation(u32 val[2],u8 sign)
+{
+u32 sum=&val;u8 i=0;
+*sum=0;
+switch(sign)
+{
+case'+':
+	for(i=0;i<=1;i++)
+	{
+		*sum=*sum+val[i];
+	}
+	break;
+}
+return sum;
+}*/
+u8 sum(u8 x ,u8 y)
+{
+	u8 sum=0;
+	sum=x+y;
+	return sum;
+}

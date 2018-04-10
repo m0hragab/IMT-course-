@@ -1,0 +1,78 @@
+00:15:17 **** Incremental Build of configuration Debug for project TWI_Driver ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Main.c
+ 
+Building target: TWI_Driver.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TWI_Driver.map -mmcu=atmega32 -o "TWI_Driver.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o   
+Finished building target: TWI_Driver.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S TWI_Driver.elf  >"TWI_Driver.lss"
+Finished building: TWI_Driver.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex TWI_Driver.elf  "TWI_Driver.hex"
+Finished building: TWI_Driver.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 TWI_Driver.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7748 bytes (23.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:TWI_Driver.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "TWI_Driver.hex"
+avrdude: input file TWI_Driver.hex auto detected as Intel Hex
+avrdude: writing flash (7748 bytes):
+
+Writing | ################################################## | 100% 5.19s
+
+avrdude: 7748 bytes of flash written
+avrdude: verifying flash memory against TWI_Driver.hex:
+avrdude: load data flash data from input file TWI_Driver.hex:
+avrdude: input file TWI_Driver.hex auto detected as Intel Hex
+avrdude: input file TWI_Driver.hex contains 7748 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 4.25s
+
+avrdude: verifying ...
+avrdude: 7748 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+00:15:29 Build Finished (took 11s.96ms)
+

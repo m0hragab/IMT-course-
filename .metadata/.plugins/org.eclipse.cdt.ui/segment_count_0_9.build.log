@@ -1,0 +1,55 @@
+20:56:42 **** Incremental Build of configuration Debug for project segment_count_0_9 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 segment_count_0_9.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3398 bytes (10.4% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:segment_count_0_9.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "segment_count_0_9.hex"
+avrdude: input file segment_count_0_9.hex auto detected as Intel Hex
+avrdude: writing flash (3398 bytes):
+
+Writing | ################################################## | 100% 2.29s
+
+avrdude: 3398 bytes of flash written
+avrdude: verifying flash memory against segment_count_0_9.hex:
+avrdude: load data flash data from input file segment_count_0_9.hex:
+avrdude: input file segment_count_0_9.hex auto detected as Intel Hex
+avrdude: input file segment_count_0_9.hex contains 3398 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.90s
+
+avrdude: verifying ...
+avrdude: 3398 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+20:56:46 Build Finished (took 4s.774ms)
+

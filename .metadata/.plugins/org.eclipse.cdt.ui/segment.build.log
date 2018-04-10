@@ -1,0 +1,77 @@
+01:43:12 **** Incremental Build of configuration Debug for project segment ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'main':
+../main.c:22: warning: array subscript has type 'char'
+Finished building: ../main.c
+ 
+Building target: segment.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,segment.map -mmcu=atmega32 -o "segment.elf"  ./main.o   
+Finished building target: segment.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S segment.elf  >"segment.lss"
+Finished building: segment.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex segment.elf  "segment.hex"
+Finished building: segment.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 segment.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3382 bytes (10.3% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:segment.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "segment.hex"
+avrdude: input file segment.hex auto detected as Intel Hex
+avrdude: writing flash (3382 bytes):
+
+Writing | ################################################## | 100% 2.16s
+
+avrdude: 3382 bytes of flash written
+avrdude: verifying flash memory against segment.hex:
+avrdude: load data flash data from input file segment.hex:
+avrdude: input file segment.hex auto detected as Intel Hex
+avrdude: input file segment.hex contains 3382 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.73s
+
+avrdude: verifying ...
+avrdude: 3382 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+01:43:17 Build Finished (took 4s.954ms)
+

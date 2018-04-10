@@ -1,0 +1,78 @@
+13:39:55 **** Incremental Build of configuration Debug for project pwm_feature ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Main.c
+ 
+Building target: pwm_feature.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,pwm_feature.map -mmcu=atmega32 -o "pwm_feature.elf"  ./Dio.o ./LCD_pro.o ./Main.o   
+Finished building target: pwm_feature.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S pwm_feature.elf  >"pwm_feature.lss"
+Finished building: pwm_feature.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex pwm_feature.elf  "pwm_feature.hex"
+Finished building: pwm_feature.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 pwm_feature.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9082 bytes (27.7% Full)
+(.text + .data + .bootloader)
+
+Data:        303 bytes (14.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:pwm_feature.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "pwm_feature.hex"
+avrdude: input file pwm_feature.hex auto detected as Intel Hex
+avrdude: writing flash (9082 bytes):
+
+Writing | ################################################## | 100% 6.18s
+
+avrdude: 9082 bytes of flash written
+avrdude: verifying flash memory against pwm_feature.hex:
+avrdude: load data flash data from input file pwm_feature.hex:
+avrdude: input file pwm_feature.hex auto detected as Intel Hex
+avrdude: input file pwm_feature.hex contains 9082 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.07s
+
+avrdude: verifying ...
+avrdude: 9082 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+13:40:08 Build Finished (took 12s.558ms)
+

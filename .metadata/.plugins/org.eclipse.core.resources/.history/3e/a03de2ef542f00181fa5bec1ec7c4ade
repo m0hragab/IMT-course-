@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 24, 2018
+ *      Author: mohragab
+ */
+
+#include<avr/io.h>
+#include<avr/interrupt.h>
+//char x;
+//char y;
+//int z=5;
+char x __attribute__((section(".shaba7")));
+char y __attribute__((section(".omar")))=8;
+const char c=8;
+int main(void)
+{
+	return 0;
+}

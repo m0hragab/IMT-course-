@@ -1,0 +1,75 @@
+14:14:27 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:41: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12572 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12572 bytes):
+
+Writing | ################################################## | 100% 8.46s
+
+avrdude: 12572 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12572 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.23s
+
+avrdude: verifying ...
+avrdude: 12572 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+14:14:44 Build Finished (took 17s.27ms)
+

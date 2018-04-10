@@ -1,0 +1,99 @@
+23:26:04 **** Build of configuration Debug for project Simple_Calculator ****
+make all 
+Building file: ../Dio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Dio.d" -MT"Dio.o" -c -o "Dio.o" "../Dio.c"
+Finished building: ../Dio.c
+ 
+Building file: ../LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"LCD.d" -MT"LCD.o" -c -o "LCD.o" "../LCD.c"
+In file included from ../LCD.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../LCD.c
+ 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:14:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+Finished building: ../Main.c
+ 
+Building file: ../key_Pad_Driver.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"key_Pad_Driver.d" -MT"key_Pad_Driver.o" -c -o "key_Pad_Driver.o" "../key_Pad_Driver.c"
+In file included from ../key_Pad_Driver.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../key_Pad_Driver.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../key_Pad_Driver.c
+ 
+Building target: Simple_Calculator.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Simple_Calculator.map -mmcu=atmega32 -o "Simple_Calculator.elf"  ./Dio.o ./LCD.o ./Main.o ./key_Pad_Driver.o   
+Finished building target: Simple_Calculator.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Simple_Calculator.elf  >"Simple_Calculator.lss"
+Finished building: Simple_Calculator.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Simple_Calculator.elf  "Simple_Calculator.hex"
+Finished building: Simple_Calculator.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Simple_Calculator.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7684 bytes (23.4% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Simple_Calculator.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Simple_Calculator.hex"
+avrdude: input file Simple_Calculator.hex auto detected as Intel Hex
+avrdude: writing flash (7684 bytes):
+
+Writing | ################################################## | 100% 5.07s
+
+avrdude: 7684 bytes of flash written
+avrdude: verifying flash memory against Simple_Calculator.hex:
+avrdude: load data flash data from input file Simple_Calculator.hex:
+avrdude: input file Simple_Calculator.hex auto detected as Intel Hex
+avrdude: input file Simple_Calculator.hex contains 7684 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 4.29s
+
+avrdude: verifying ...
+avrdude: 7684 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+23:26:15 Build Finished (took 11s.402ms)
+

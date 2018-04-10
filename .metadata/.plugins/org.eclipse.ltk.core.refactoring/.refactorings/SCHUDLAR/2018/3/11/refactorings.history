@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SCHUDLAR/RTO.h&apos; to &apos;RTO_Interface.h&apos;" description="Rename resource &apos;RTO.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="RTO.h" name="RTO_Interface.h" stamp="1521200348046" updateReferences="true"/>
+</session>

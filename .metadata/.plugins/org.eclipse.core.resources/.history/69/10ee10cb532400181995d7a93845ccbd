@@ -1,0 +1,85 @@
+/*
+ * EEPROM_Pro.c
+ *
+ *  Created on: Mar 10, 2018
+ *      Author: mohragab
+ */
+
+
+#include"Macros.h"
+#include"Std_Types.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/io.h>
+#include<util/delay.h>
+#include"TWI_Interface.h"
+#include"EEPROM_Interface.h"
+
+
+
+void EEPROM_VidInit(void)
+{
+	TWI_VidInit();
+}
+
+u8 EEPROM_U8WriteByte(u16 LOCATION,u8 Byte)
+{
+	u8 SLA_W;
+	u8 P1,P0;
+	SLA_W=0B10100000;
+	P1=getbit(LOCATION,9);
+	P0=getbit(LOCATION,8);
+	SLA_W |=(P1<<2);
+	SLA_W |=(P0<<1);
+	TWI_VidSendStart();
+	if(TWI_u8CheckAck(START_CONDITION)==1)
+	{
+		TWI_VidSendByte(SLA_W);
+		if(TWI_u8CheckAck(SLA_W_ACK)==1)
+		{
+			TWI_VidSendByte((u8)LOCATION);
+			if(TWI_u8CheckAck(DATA_TX_ACK)==1)
+			{
+				TWI_VidSendByte(Byte);
+				if(TWI_u8CheckAck(DATA_TX_ACK)==1);
+				{
+					TWI_VidSendStop();
+					return 1;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+u8 EEPROM_U8ReadByte(u16 LOCATION,u8 * Byte)
+{
+
+	u8 SLA_W;
+	u8 P1,P0;
+	SLA_W=0B10100000;
+	P1=getbit(LOCATION,9);
+	P0=getbit(LOCATION,8);
+	SLA_W |=(P1<<2);
+	SLA_W |=(P0<<1);
+
+	TWI_vidSendStart();
+	if(TWI_u8checkAck(START_CONDITION) == 1) {
+		TWI_vidSendByte(SLA_W);
+		if(TWI_u8checkAck(SLA_W_ACK) == 1) {
+			TWI_vidSendByte((u8)LOCATION); //This casting is done, so we take the first 8 bits, that signify the location.
+			if(TWI_u8checkAck(DATA_TX_ACK) == 1) {
+				if(TWI_u8checkAck(REPEATED_START) == 1) {
+					SET_BIT(SLA_W,0);
+					TWI_vdSendByte(SLA_W);
+					if(TWI_u8checkAck(SLA_W_ACK) == 1) {
+						*Byte = TWI_u8receiveWithNoAck();
+						TWI_vidSendStop();
+						return 1;
+					}
+				}
+			}
+		}
+	}
+}
+

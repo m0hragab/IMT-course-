@@ -1,0 +1,47 @@
+15:05:37 **** Incremental Build of configuration Debug for project SCHUDLAR ****
+make all 
+Building file: ../RTO_PRO.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"RTO_PRO.d" -MT"RTO_PRO.o" -c -o "RTO_PRO.o" "../RTO_PRO.c"
+In file included from ../RTO_PRO.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../RTO_PRO.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+Finished building: ../RTO_PRO.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+Finished building: ../main.c
+ 
+Building target: SCHUDLAR.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SCHUDLAR.map -mmcu=atmega32 -o "SCHUDLAR.elf"  ./Dio.o ./RTO_PRO.o ./main.o   
+Finished building target: SCHUDLAR.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SCHUDLAR.elf  >"SCHUDLAR.lss"
+Finished building: SCHUDLAR.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 SCHUDLAR.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2484 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:         54 bytes (2.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:05:38 Build Finished (took 1s.406ms)
+

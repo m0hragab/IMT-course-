@@ -1,0 +1,92 @@
+/*
+ * keyPad.c
+ *
+ *  Created on: Jan 12, 2018
+ *      Author: mohragab
+ */
+#include"Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include "util/delay.h"
+#include "LCD.h"
+#include<avr/delay.h>
+#include"Key_Pad_Driver.h"
+#define F_CPU 8000000
+
+int main(void)
+{
+	/*u8 loc =0;
+	Dio_vidSetPortDirection(Dio_PORTA,0Xff);
+	Dio_vidSetPortDirection(Dio_PORTD,0xff);
+	Dio_vidSetPortDirection(Dio_PORTB,0x0f);
+	Dio_vidSetPortValue(Dio_PORTB,0Xff);
+	Lcd_vidInit();
+	_delay_ms(120);
+
+
+	loc=0;
+	loc = KPD_u8GetPressedKey();
+	Lcd_vidWriteCharctr(loc);
+	_delay_ms(120);*/
+
+	u8 arr[4][4]={{'1','2','3','+'},{'4','5','6','-'},{'7','8','9','x'},{'=','0','#','/'}};
+	u8 R , C;
+	Dio_vidSetPortDirection(Dio_PORTA,0b11111111);
+	Dio_vidSetPortDirection(Dio_PORTD,0b11111111);
+	DDRB=0x0f;
+	PORTB=0xff;
+	Lcd_vidInit();
+
+	while(1)
+	{
+
+		for(R=0;R<=3;R++)
+		{
+			clearbit(PORTB,R);
+			for(C=4;C<8;C++)
+			{
+				if(Dio_u8GetPinValue(Dio_PORTB,C)==0)
+				{
+					if(arr[R][C-4]=='#')
+						Lcd_vidSendCommand(clear_display);
+					else
+						Lcd_vidWriteCharctr(arr[R][C-4]);
+					while(Dio_u8GetPinValue(Dio_PORTB,C)==0)
+					;
+				_delay_ms(10);
+				}
+
+			}
+			setbit(PORTB,R);
+		}
+
+     }
+
+	u8 Password[]={0};
+	u8 line1[]="enter password";
+	u8 line2[]="Invalid Password";
+	while(Password[0]!='1')
+	{
+
+	Lcd_vidWriteString(line1);
+	_delay_ms(100);
+	if(Password[0]=='1')
+	{
+		DDRC=0XFF;
+		Dio_vidSetPinValue(Dio_PORTC,7,1);
+	}
+	else
+	{
+		_delay_ms(100);
+
+		Lcd_vidWriteString(line2);
+	    Dio_vidSetPinValue(Dio_PORTC,6,1);
+	}
+
+	}
+	return 0;
+}
+
+
+
+

@@ -1,0 +1,17 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 21, 2017
+ *      Author: EngOm
+ */
+
+
+#include "FreeRTOS.h"
+#include "task.h"
+
+
+int main(void)
+{
+
+	return 0;
+}

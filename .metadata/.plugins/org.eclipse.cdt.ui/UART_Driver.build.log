@@ -1,0 +1,55 @@
+22:55:08 **** Incremental Build of configuration Debug for project UART_Driver ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 UART_Driver.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5280 bytes (16.1% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:UART_Driver.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "UART_Driver.hex"
+avrdude: input file UART_Driver.hex auto detected as Intel Hex
+avrdude: writing flash (5280 bytes):
+
+Writing | ################################################## | 100% 3.61s
+
+avrdude: 5280 bytes of flash written
+avrdude: verifying flash memory against UART_Driver.hex:
+avrdude: load data flash data from input file UART_Driver.hex:
+avrdude: input file UART_Driver.hex auto detected as Intel Hex
+avrdude: input file UART_Driver.hex contains 5280 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 2.80s
+
+avrdude: verifying ...
+avrdude: 5280 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+22:55:15 Build Finished (took 7s.29ms)
+

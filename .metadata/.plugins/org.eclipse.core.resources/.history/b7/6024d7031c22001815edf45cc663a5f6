@@ -1,0 +1,83 @@
+/*
+ * Main.c
+ *
+ *  Created on: Feb 23, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include "Std_Types.h"
+#include"util/delay.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include"util/delay.h"
+#include "MACROR.h"
+
+
+
+
+int main(void)
+{
+	u8 i=0;
+	Dio_vidSetPortDirection(Dio_PORTB,0xff);
+
+	while(1)
+	{
+
+		/*for(i=0;i<=200;i++)
+		{
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_HIGH);//anti clockwise
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+			_delay_ms(2);
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_HIGH);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+			_delay_ms(2);
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_HIGH);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+			_delay_ms(2);
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_HIGH);
+			_delay_ms(2);
+		}*/
+		Dio_vidSetPortValue(Dio_PORTB,0x00);
+		_delay_ms(5);
+		for(i=0;i<=300;i++)
+		{
+
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);//clockwise
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_HIGH);
+			_delay_ms(2);
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_HIGH);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+			_delay_ms(2);
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_HIGH);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+			_delay_ms(2);
+			Dio_vidSetPinValue(Dio_PORTB,0,STD_HIGH);
+			Dio_vidSetPinValue(Dio_PORTB,1,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,2,STD_LOW);
+			Dio_vidSetPinValue(Dio_PORTB,3,STD_LOW);
+			_delay_ms(2);
+		}
+
+
+	}
+
+	return 0;
+}

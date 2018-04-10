@@ -1,0 +1,25 @@
+13:11:44 **** Build of configuration Debug for project genrate_ signal ****
+make all 
+Building file: ../Dio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Dio.d" -MT"Dio.o" -c -o "Dio.o" "../Dio.c"
+Finished building: ../Dio.c
+ 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Main.c
+ 
+Building target: genrate_ signal.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,genrate_ signal.map -mmcu=atmega32 -o "genrate_ signal.elf"  ./Dio.o ./Main.o   
+avr-gcc.exe: signal.map: No such file or directory
+make: *** [genrate_ signal.elf] Error 1
+
+13:11:45 Build Finished (took 577ms)
+

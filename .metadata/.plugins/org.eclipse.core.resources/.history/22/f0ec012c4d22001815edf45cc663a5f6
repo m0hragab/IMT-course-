@@ -1,0 +1,232 @@
+/*
+ * Dio.c
+ *
+ *  Created on: Jan 6, 2018
+ *      Author: Toshiba
+ */
+#include"MACROS.h"
+#include"Dio.h"
+#include"STD_TYPES.h"
+
+void Dio_vidSetPinValue(u8 u8PortNumberCpy,u8 u8PinNumberCpy,u8 u8ValueCpy)
+{
+	switch (u8PortNumberCpy)
+	{
+	//PORTA
+	case Dio_PORTA :
+		if(u8ValueCpy==STD_HIGH)
+		{
+			setbit(PORTA,u8PinNumberCpy);
+
+		}
+		else if(u8ValueCpy==STD_LOW)
+		{
+
+			clearbit(PORTA,u8PinNumberCpy);
+		}
+		break;
+
+		//PORTB
+	case Dio_PORTB :
+		if(u8ValueCpy==STD_HIGH)
+		{
+			setbit(PORTB,u8PinNumberCpy);
+
+		}
+		else if(u8ValueCpy==STD_LOW)
+		{
+
+			clearbit(PORTB,u8PinNumberCpy);
+		}
+		break;
+
+
+		//PORTC
+	case Dio_PORTC :
+		if(u8ValueCpy==STD_HIGH)
+		{
+			setbit(PORTC,u8PinNumberCpy);
+
+		}
+		else if(u8ValueCpy==STD_LOW)
+		{
+
+			clearbit(PORTC,u8PinNumberCpy);
+		}
+		break;
+
+
+		//PORTD
+	case Dio_PORTD :
+		if(u8ValueCpy==STD_HIGH)
+		{
+			setbit(PORTD,u8PinNumberCpy);
+
+		}
+		else if(u8ValueCpy==STD_LOW)
+		{
+
+			clearbit(PORTD,u8PinNumberCpy);
+		}
+		break;
+	}
+
+}
+
+
+
+u8 Dio_u8GetPinValue(u8 u8PortNumberCpy,u8 u8PinNumbercpy)
+{
+	switch(u8PortNumberCpy)
+	{
+	case Dio_PORTA:
+		return getbit(PINA,u8PinNumbercpy);
+
+		break;
+
+
+	case Dio_PORTB:
+		return getbit(PINB,u8PinNumbercpy);
+
+		break;
+
+
+	case Dio_PORTC:
+		return	getbit(PINC,u8PinNumbercpy);
+		break;
+
+
+	case Dio_PORTD:
+		return	getbit(PIND,u8PinNumbercpy);
+		break;
+
+	default:
+	{
+		return 0;
+	}
+
+	}
+}
+
+void Dio_vidSetPinDirection(u8 u8PortNumberCpy,u8 u8PinNumberCpy,u8 u8DirectionCpy)
+{
+	switch(u8PortNumberCpy)
+	{
+	case Dio_PORTA:
+		if(u8DirectionCpy==0){
+			clearbit(DDRA,u8PinNumberCpy);
+		}
+		if(u8DirectionCpy==1){
+
+			setbit(DDRA,u8PinNumberCpy);
+		}
+
+		break;
+
+	case Dio_PORTB:
+		if(u8DirectionCpy==0){
+			clearbit(DDRB,u8PinNumberCpy);
+		}
+		else if(u8DirectionCpy==1){
+
+			setbit(DDRB,u8PinNumberCpy);
+		}
+		break;
+
+	case Dio_PORTC:
+		if(u8DirectionCpy==0){
+			clearbit(DDRC,u8PinNumberCpy);
+		}
+		else if(u8DirectionCpy==1){
+
+			setbit(DDRC,u8PinNumberCpy);
+		}
+
+		break;
+
+	case Dio_PORTD:
+		if(u8DirectionCpy==0){
+			clearbit(DDRD,u8PinNumberCpy);
+		}
+		else if(u8DirectionCpy==1){
+
+			setbit(DDRD,u8PinNumberCpy);
+		}
+
+		break;
+
+	}
+}
+
+void Dio_vidSetPortDirection(u8 u8PortNumberCpy,u8 u8ValueCpy)
+{
+	switch(u8PortNumberCpy)
+	{
+	case Dio_PORTA:
+		DDRA=u8ValueCpy;
+		break;
+
+	case Dio_PORTB:
+		DDRB=u8ValueCpy;
+		break;
+
+	case Dio_PORTC:
+		DDRC=u8ValueCpy;
+		break;
+
+	case Dio_PORTD:
+		DDRD=u8ValueCpy;
+		break;
+
+	}
+}
+
+void Dio_vidSetPortValue(u8 u8PortNumberCpy,u8 u8ValueCpy)
+{
+	switch(u8PortNumberCpy)
+	{
+	case Dio_PORTA:
+		PORTA=u8ValueCpy;
+		break;
+
+	case Dio_PORTB:
+		PORTB =u8ValueCpy;
+		break;
+
+	case Dio_PORTC:
+		PORTC =u8ValueCpy;
+		break;
+
+	case Dio_PORTD:
+		PORTD =u8ValueCpy;
+		break;
+
+	}
+}
+
+
+u8 Dio_u8GetPortValue(u8 u8PortNumberCpy)
+{
+	switch(u8PortNumberCpy)
+	{
+	case Dio_PORTA:
+		return PINA;
+		break;
+
+	case Dio_PORTB:
+		return PINB;
+		break;
+
+	case Dio_PORTC:
+		return PINC;
+		break;
+
+	case Dio_PORTD:
+		return PIND;
+
+	default:
+		return 0;
+
+	}
+
+}

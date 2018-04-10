@@ -1,0 +1,78 @@
+13:56:01 **** Incremental Build of configuration Debug for project ADC_potentiometer ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:5:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:5:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Main.c
+ 
+Building target: ADC_potentiometer.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC_potentiometer.map -mmcu=atmega32 -o "ADC_potentiometer.elf"  ./Dio.o ./LCD.o ./Main.o   
+Finished building target: ADC_potentiometer.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC_potentiometer.elf  >"ADC_potentiometer.lss"
+Finished building: ADC_potentiometer.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC_potentiometer.elf  "ADC_potentiometer.hex"
+Finished building: ADC_potentiometer.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC_potentiometer.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6736 bytes (20.6% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:ADC_potentiometer.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "ADC_potentiometer.hex"
+avrdude: input file ADC_potentiometer.hex auto detected as Intel Hex
+avrdude: writing flash (6736 bytes):
+
+Writing | ################################################## | 100% 4.50s
+
+avrdude: 6736 bytes of flash written
+avrdude: verifying flash memory against ADC_potentiometer.hex:
+avrdude: load data flash data from input file ADC_potentiometer.hex:
+avrdude: input file ADC_potentiometer.hex auto detected as Intel Hex
+avrdude: input file ADC_potentiometer.hex contains 6736 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 3.82s
+
+avrdude: verifying ...
+avrdude: 6736 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+13:56:11 Build Finished (took 9s.597ms)
+

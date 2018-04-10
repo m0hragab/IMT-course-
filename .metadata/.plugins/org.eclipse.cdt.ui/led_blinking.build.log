@@ -1,0 +1,55 @@
+22:24:18 **** Incremental Build of configuration Debug for project led_blinking ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 led_blinking.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3492 bytes (10.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:led_blinking.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "led_blinking.hex"
+avrdude: input file led_blinking.hex auto detected as Intel Hex
+avrdude: writing flash (3492 bytes):
+
+Writing | ################################################## | 100% 2.13s
+
+avrdude: 3492 bytes of flash written
+avrdude: verifying flash memory against led_blinking.hex:
+avrdude: load data flash data from input file led_blinking.hex:
+avrdude: input file led_blinking.hex auto detected as Intel Hex
+avrdude: input file led_blinking.hex contains 3492 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.79s
+
+avrdude: verifying ...
+avrdude: 3492 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+22:24:22 Build Finished (took 4s.508ms)
+

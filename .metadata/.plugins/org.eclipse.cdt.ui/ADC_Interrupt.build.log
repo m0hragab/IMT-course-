@@ -1,0 +1,78 @@
+11:41:22 **** Incremental Build of configuration Debug for project ADC_Interrupt ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:5:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:5:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Main.c
+ 
+Building target: ADC_Interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC_Interrupt.map -mmcu=atmega32 -o "ADC_Interrupt.elf"  ./Dio.o ./LCD.o ./Main.o   
+Finished building target: ADC_Interrupt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC_Interrupt.elf  >"ADC_Interrupt.lss"
+Finished building: ADC_Interrupt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC_Interrupt.elf  "ADC_Interrupt.hex"
+Finished building: ADC_Interrupt.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC_Interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6398 bytes (19.5% Full)
+(.text + .data + .bootloader)
+
+Data:          9 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:ADC_Interrupt.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "ADC_Interrupt.hex"
+avrdude: input file ADC_Interrupt.hex auto detected as Intel Hex
+avrdude: writing flash (6398 bytes):
+
+Writing | ################################################## | 100% 4.23s
+
+avrdude: 6398 bytes of flash written
+avrdude: verifying flash memory against ADC_Interrupt.hex:
+avrdude: load data flash data from input file ADC_Interrupt.hex:
+avrdude: input file ADC_Interrupt.hex auto detected as Intel Hex
+avrdude: input file ADC_Interrupt.hex contains 6398 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 3.54s
+
+avrdude: verifying ...
+avrdude: 6398 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+11:41:32 Build Finished (took 9s.254ms)
+

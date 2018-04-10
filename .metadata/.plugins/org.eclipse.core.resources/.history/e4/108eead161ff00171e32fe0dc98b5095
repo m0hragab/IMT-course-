@@ -1,0 +1,37 @@
+/*
+ * keyPad.c
+ *
+ *  Created on: Jan 12, 2018
+ *      Author: mohragab
+ */
+#include"Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include "util/delay.h"
+#include "LCD.h"
+#include<avr/delay.h>
+#include"Key_Pad_Driver.h"
+#define F_CPU 8000000
+
+int main(void)
+{
+	u8 LOC=0;
+	Dio_vidSetPortDirection(Dio_PORTA,0b11111111);
+	Dio_vidSetPortDirection(Dio_PORTD,0b11111111);
+		DDRB=0x0f;
+		PORTB=0xff;
+		Lcd_vidInit();
+
+	while (1){
+
+		//Lcd_vidWriteCharctr('C');
+		LOC= U8KEY_PAD();
+		_dealy_ms(120);
+         }
+	Lcd_vidWriteCharctr(LOC);
+	return 0;
+}
+
+
+
+

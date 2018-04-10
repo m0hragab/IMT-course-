@@ -1,0 +1,123 @@
+/*
+ * Main.c
+ *
+ *  Created on: Mar 10, 2018
+ *      Author: mohragab
+ */
+
+
+#include"Macros.h"
+#include"Std_Types.h"
+#include"Dio.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<util/delay.h>
+#include"LCD_Interface.h"
+#include"Key_PAD_Interface.h"
+#include"TWI_Interface.h"
+#include "EEPROM_Interface.h"
+#include <string.h>
+
+
+int main(void)
+{
+
+	u8 ID[1]={0};
+	u8 PASSWORD[4]={0};
+	u8 check_PASSWORD[4]={0};
+	u8 ENTER_ID[]="Enter ID";
+	u8 ENTER_PASSWORD[]="ENTER PASSWORD";
+	u8 REENTER_PASSWORD[]="REENTER PASSWORD";
+	u8 compare=0;
+	u8 flag =0;
+	u8 pressed_Key=0xff;
+	u8 i=0;
+	u8 j=0;
+	u8 Confirmation[]="SAVED";
+	lcd_vidinit();
+	keypad_vidinit();
+	EEPROM_VidInit();
+	while(1)
+	{
+
+		Lcd_vidWriteString(ENTER_ID);
+		do
+		{
+			pressed_Key=keyPAD_U8GetKey();
+			ID[0]=pressed_Key;
+		}while(pressed_Key==0xff);
+		lcd_vidwritechar(pressed_Key+0x30);
+
+		Lcd_vidWriteString(ENTER_PASSWORD);
+		do
+		{
+			pressed_Key=keyPAD_U8GetKey();
+			for(i=0;i<4;i++)
+			{
+				PASSWORD[i]=pressed_Key;
+			}
+		}while(pressed_Key==0xff);
+		lcd_vidwritechar(pressed_Key+0x30);
+
+		Lcd_vidWriteString(REENTER_PASSWORD);
+		do
+		{
+			pressed_Key=keyPAD_U8GetKey();
+			for(j=0;j<4;j++)
+			{
+				check_PASSWORD[j]=pressed_Key;
+			}
+		}while(pressed_Key==0xff);
+		lcd_vidwritechar(pressed_Key+0x30);
+		compare= strcmp(const char *PASSWORD, const char *check_PASSWORD);
+
+
+	}
+	return 0;
+
+}
+
+
+
+
+
+
+/*int main(void)
+{
+	u8 arr[100]="Mohragab";
+	lcd_vidinit();
+	EEPROM_VidInit();
+	u8 i=0;
+	while(i!='0')
+	{
+		EEPROM_U8WriteByte(i,arr[i]);
+		i++;
+		_delay_ms(50);
+	}
+
+	while (1);
+	return 0;
+}*/
+
+
+/*int main(void)
+{
+
+	u8 receiveddata;
+	lcd_vidinit();
+	EEPROM_VidInit();
+	u8 i=0;
+	while((i!='0')&&(i<8))
+	{
+		EEPROM_U8ReadByte(i,&receiveddata);
+		lcd_vidwritechar(receiveddata);
+		i++;
+		_delay_ms(50);
+	}
+
+	while(1);
+
+
+	return 0;
+}*/
+

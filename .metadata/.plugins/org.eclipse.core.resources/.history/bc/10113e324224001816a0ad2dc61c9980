@@ -1,0 +1,51 @@
+/*
+ * TWI_Pro.c
+ *
+ *  Created on: Mar 10, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include"Macros.h"
+#include"Std_Types.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/io.h>
+#include<util/delay.h>
+#include"TWI_Interface.h"
+
+void TWI_VidInit(void)
+{
+	TWCR=(1<<TWEN);//Enable TWI
+	TWBR=2;//CONFIG CLK
+	TWSR=0;//CONFIG CLK
+	TWAR=2;//MY address in case being slave
+}
+
+void TWI_VidSendStart(void)
+{
+  TWCR=(1<<TWSTA) | (1<<TWINT) | (1<<TWEN);
+  while(getbit(TWCR,TWINT)==0);//wait till flag set
+}
+
+void TWI_VidSendByte(u8 Byte)
+{
+	TWDR=Byte;//INSERT DATA
+	TWCR=(1<<TWINT) | (1<<TWEN);
+	while(getbit(TWCR,TWINT)==0);//wait till flag set
+}
+
+
+void TWI_VidSendStop(void)
+{
+	TWCR=(1<<TWSTO) | (1<<TWINT) | (1<<TWEN);
+}
+
+u8 TWI_U8ReceivewithnoACK(void)
+{
+
+	TWCR=(1<<TWINT)|(1<<TWEN);//CLEAR fLAG to read data
+	while(getbit(TWCR,TWINT)==0);//wait till flag set
+	return TWDR;
+
+}

@@ -1,0 +1,113 @@
+/*
+ * Main.c
+ *
+ *  Created on: Mar 10, 2018
+ *      Author: mohragab
+ */
+
+
+#include"Macros.h"
+#include"Std_Types.h"
+#include"Dio.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<util/delay.h>
+#include"LCD_Interface.h"
+#include"TWI_Interface.h"
+#include "EEPROM_Interface.h"
+
+int main(void)
+{
+u8 line[]="Done";
+lcd_vidinit();
+EEPROM_VidInit();
+u8 flag=0;
+flag = EEPROM_U8WriteByte(0,'I');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(1,'L');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(2,'O');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(3,'V');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(4,'E');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(5,'I');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(6,'M');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+flag = EEPROM_U8WriteByte(7,'T');
+if (flag==1)
+{
+	Lcd_vidWriteString(line);
+	flag=0;
+}
+_delay_ms(200);
+while (1);
+return 0;
+}
+
+
+/*int main(void)
+{
+	lcd_vidinit();
+	EEPROM_VidInit();
+	u8 receiveddata;
+	EEPROM_U8ReadByte(0,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(1,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(2,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(3,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(4,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(5,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(6,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+	EEPROM_U8ReadByte(7,&receiveddata);
+	lcd_vidwritechar(receiveddata);
+
+	while(1);
+
+
+	return 0;
+}*/
+

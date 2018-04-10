@@ -1,0 +1,75 @@
+03:32:42 **** Build of configuration Debug for project segment_count_0_99_down ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: segment_count_0_99_down.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,segment_count_0_99_down.map -mmcu=atmega32 -o "segment_count_0_99_down.elf"  ./main.o   
+Finished building target: segment_count_0_99_down.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S segment_count_0_99_down.elf  >"segment_count_0_99_down.lss"
+Finished building: segment_count_0_99_down.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex segment_count_0_99_down.elf  "segment_count_0_99_down.hex"
+Finished building: segment_count_0_99_down.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 segment_count_0_99_down.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3686 bytes (11.2% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:segment_count_0_99_down.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "segment_count_0_99_down.hex"
+avrdude: input file segment_count_0_99_down.hex auto detected as Intel Hex
+avrdude: writing flash (3686 bytes):
+
+Writing | ################################################## | 100% 2.32s
+
+avrdude: 3686 bytes of flash written
+avrdude: verifying flash memory against segment_count_0_99_down.hex:
+avrdude: load data flash data from input file segment_count_0_99_down.hex:
+avrdude: input file segment_count_0_99_down.hex auto detected as Intel Hex
+avrdude: input file segment_count_0_99_down.hex contains 3686 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.88s
+
+avrdude: verifying ...
+avrdude: 3686 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+03:32:48 Build Finished (took 5s.307ms)
+

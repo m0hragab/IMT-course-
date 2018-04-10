@@ -1,0 +1,31 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 9, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include <util/delay.h>
+#include "LCD_Interface.h"
+#include "key_PAD_Interface.h"
+#include <util/delay.h>
+
+int main(void)
+{
+	u8 Value;
+	lcd_vidinit();
+	_delay_ms(2);
+	keypad_vidinit();
+	while (1)
+	{
+	  Value=0;
+	  Value=key_PAD_U8Get_Key();
+	  lcd_vidwritechar(Value);
+	}
+
+
+	return 0;
+}

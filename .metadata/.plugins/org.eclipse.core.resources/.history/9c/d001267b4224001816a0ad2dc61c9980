@@ -1,0 +1,16 @@
+/*
+ * TWI_Interface.h
+ *
+ *  Created on: Mar 10, 2018
+ *      Author: mohragab
+ */
+
+#ifndef TWI_INTERFACE_H_
+#define TWI_INTERFACE_H_
+void TWI_VidInit(void);
+void TWI_VidSendStart(void);
+void TWI_VidSendByte(u8 Byte);
+void TWI_VidSendStop(void);
+u8 TWI_U8ReceivewithnoACK(void);
+
+#endif /* TWI_INTERFACE_H_ */

@@ -1,0 +1,24 @@
+13:32:06 **** Incremental Build of configuration Debug for project KeyPad_input ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 KeyPad_input.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7060 bytes (21.5% Full)
+(.text + .data + .bootloader)
+
+Data:         40 bytes (2.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:KeyPad_input.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+13:32:06 Build Finished (took 343ms)
+

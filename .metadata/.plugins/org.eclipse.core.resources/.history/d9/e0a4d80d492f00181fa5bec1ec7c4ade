@@ -1,0 +1,14 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 24, 2018
+ *      Author: mohragab
+ */
+
+#include<avr/io.h>
+#include<avr/interrupt.h>
+char x;
+int main(void)
+{
+	return 0;
+}

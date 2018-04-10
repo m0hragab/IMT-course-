@@ -1,0 +1,10 @@
+13:11:05 **** Incremental Build of configuration Debug for project genrate signal ****
+make all 
+Building target: genrate signal.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,genrate signal.map -mmcu=atmega32 -o "genrate signal.elf"  ./Dio.o ./Main.o   
+avr-gcc.exe: signal.map: No such file or directory
+make: *** [genrate signal.elf] Error 1
+
+13:11:05 Build Finished (took 250ms)
+

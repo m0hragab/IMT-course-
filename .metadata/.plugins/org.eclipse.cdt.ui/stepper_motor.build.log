@@ -1,0 +1,55 @@
+19:27:19 **** Incremental Build of configuration Debug for project stepper_motor ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stepper_motor.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5708 bytes (17.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:stepper_motor.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "stepper_motor.hex"
+avrdude: input file stepper_motor.hex auto detected as Intel Hex
+avrdude: writing flash (5708 bytes):
+
+Writing | ################################################## | 100% 3.82s
+
+avrdude: 5708 bytes of flash written
+avrdude: verifying flash memory against stepper_motor.hex:
+avrdude: load data flash data from input file stepper_motor.hex:
+avrdude: input file stepper_motor.hex auto detected as Intel Hex
+avrdude: input file stepper_motor.hex contains 5708 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 3.17s
+
+avrdude: verifying ...
+avrdude: 5708 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+19:27:26 Build Finished (took 7s.725ms)
+

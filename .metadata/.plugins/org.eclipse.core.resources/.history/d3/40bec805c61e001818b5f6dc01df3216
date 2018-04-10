@@ -1,0 +1,23 @@
+/*
+ * SPI_por.c
+ *
+ *  Created on: Mar 3, 2018
+ *      Author: mohragab
+ */
+
+
+#include "Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include <util/delay.h>
+#include <util/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include "SPI_Interface.h"
+
+void SPI_VidMasterInit(void)
+{
+	Dio_vidSetPinDirection(Dio_PORTB,SS,STD_HIGH);
+
+}

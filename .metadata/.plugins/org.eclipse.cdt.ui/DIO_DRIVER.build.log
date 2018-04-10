@@ -1,0 +1,55 @@
+11:24:36 **** Incremental Build of configuration Debug for project DIO_DRIVER ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO_DRIVER.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    1816 bytes (5.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:DIO_DRIVER.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "DIO_DRIVER.hex"
+avrdude: input file DIO_DRIVER.hex auto detected as Intel Hex
+avrdude: writing flash (1816 bytes):
+
+Writing | ################################################## | 100% 1.23s
+
+avrdude: 1816 bytes of flash written
+avrdude: verifying flash memory against DIO_DRIVER.hex:
+avrdude: load data flash data from input file DIO_DRIVER.hex:
+avrdude: input file DIO_DRIVER.hex auto detected as Intel Hex
+avrdude: input file DIO_DRIVER.hex contains 1816 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.01s
+
+avrdude: verifying ...
+avrdude: 1816 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+11:24:39 Build Finished (took 2s.808ms)
+

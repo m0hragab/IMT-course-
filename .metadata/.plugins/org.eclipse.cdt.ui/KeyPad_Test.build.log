@@ -1,0 +1,53 @@
+13:58:11 **** Incremental Build of configuration Debug for project KeyPad_Test ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+../Main.c:14:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+Finished building: ../Main.c
+ 
+Building file: ../key_Pad_Driver.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"key_Pad_Driver.d" -MT"key_Pad_Driver.o" -c -o "key_Pad_Driver.o" "../key_Pad_Driver.c"
+In file included from ../key_Pad_Driver.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../key_Pad_Driver.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+Finished building: ../key_Pad_Driver.c
+ 
+Building target: KeyPad_Test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,KeyPad_Test.map -mmcu=atmega16 -o "KeyPad_Test.elf"  ./Dio.o ./LCD.o ./Main.o ./key_Pad_Driver.o   
+Finished building target: KeyPad_Test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S KeyPad_Test.elf  >"KeyPad_Test.lss"
+Finished building: KeyPad_Test.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex KeyPad_Test.elf  "KeyPad_Test.hex"
+Finished building: KeyPad_Test.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 KeyPad_Test.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6492 bytes (39.6% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+13:58:12 Build Finished (took 1s.183ms)
+

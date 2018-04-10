@@ -1,0 +1,31 @@
+/*
+ * RTO_PRO.c
+ *
+ *  Created on: Mar 16, 2018
+ *      Author: mohragab
+ */
+#include "Dio.h"
+#include"Macros.h"
+#include"Std_Types.h"
+#include"util/delay.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include"util/delay.h"
+#include"RTO_Interface.h"
+
+
+void RTO_VidInit(void)
+{
+	u8 i;
+
+	TCCR0=0b00000001;//no prescaler 1024
+	TCNT0=0;
+	setbit(TIMSK,0); //ENABLE TIMER OVERFLOW//PIE enable
+	setbit(SREG,7);
+	for(i=0;i<RTO_U8MAXTASK_NUM;i++)
+	{
+		ARR_TASK[i]= NULL;
+	}
+}

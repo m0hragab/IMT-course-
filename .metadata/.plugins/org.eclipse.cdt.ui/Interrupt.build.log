@@ -1,0 +1,33 @@
+05:05:39 **** Incremental Build of configuration Debug for project Interrupt ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5040 bytes (15.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Interrupt.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: error: programm enable: target doesn't answer. 1 
+avrdude: initialization failed, rc=-1
+         Double check connections and try again, or use -F to override
+         this check.
+
+
+avrdude done.  Thank you.
+
+make: *** [avrdudedummy] Error 1
+
+05:05:39 Build Finished (took 406ms)
+

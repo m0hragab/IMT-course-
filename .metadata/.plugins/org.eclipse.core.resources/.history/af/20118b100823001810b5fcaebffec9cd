@@ -1,0 +1,43 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 9, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include <util/delay.h>
+#include "LCD_Interface.h"
+#include "key_PAD_Interface.h"
+#include <util/delay.h>
+
+int main(void)
+{
+	u8 pressed_key;
+	keypad_vidinit();
+	lcd_vidinit();
+	_delay_ms(2);
+	pressed_key=0xff;
+
+	while (1)
+	{
+	  do
+	  {
+		 pressed_key= keyPAD_U8Get_Key();
+		 _delay_ms(100);
+		 pressed_key= keyPAD_U8Get_Key();
+	  }while(pressed_key==0xff);
+
+	  if((pressed_key>=0)&&(pressed_key<=9))
+	  {
+		  pressed_key+=0x30;
+	  }
+
+	  lcd_vidwritechar(pressed_key);
+	}
+
+
+	return 0;
+}

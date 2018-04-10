@@ -1,0 +1,26 @@
+/*
+ * RTO_PRO.c
+ *
+ *  Created on: Mar 16, 2018
+ *      Author: mohragab
+ */
+#include "Dio.h"
+#include"Macros.h"
+#include"Std_Types.h"
+#include"util/delay.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include"util/delay.h"
+#include"RTO_Interface.h"
+
+
+void RTO_VidInit(void)
+{
+	u8 i;
+	for(i=0;i<RTO_U8MAXTASK;i++)
+	{
+		ARR_TASK[i]=NULL;
+	}
+}

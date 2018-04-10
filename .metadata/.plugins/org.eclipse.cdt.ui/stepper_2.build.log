@@ -1,0 +1,77 @@
+17:05:36 **** Incremental Build of configuration Debug for project stepper_2 ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+Finished building: ../Main.c
+ 
+Building target: stepper_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stepper_2.map -mmcu=atmega32 -o "stepper_2.elf"  ./Dio.o ./Main.o   
+Finished building target: stepper_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S stepper_2.elf  >"stepper_2.lss"
+Finished building: stepper_2.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex stepper_2.elf  "stepper_2.hex"
+Finished building: stepper_2.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stepper_2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6022 bytes (18.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:stepper_2.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "stepper_2.hex"
+avrdude: input file stepper_2.hex auto detected as Intel Hex
+avrdude: writing flash (6022 bytes):
+
+Writing | ################################################## | 100% 4.06s
+
+avrdude: 6022 bytes of flash written
+avrdude: verifying flash memory against stepper_2.hex:
+avrdude: load data flash data from input file stepper_2.hex:
+avrdude: input file stepper_2.hex auto detected as Intel Hex
+avrdude: input file stepper_2.hex contains 6022 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 3.35s
+
+avrdude: verifying ...
+avrdude: 6022 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+17:05:45 Build Finished (took 8s.648ms)
+

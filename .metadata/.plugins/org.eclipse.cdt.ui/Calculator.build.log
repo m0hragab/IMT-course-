@@ -1,0 +1,75 @@
+20:21:41 **** Incremental Build of configuration Debug for project Calculator ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: Calculator.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Calculator.map -mmcu=atmega32 -o "Calculator.elf"  ./Dio.o ./LCD_pro.o ./key_PAD_pro.o ./main.o   
+Finished building target: Calculator.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Calculator.elf  >"Calculator.lss"
+Finished building: Calculator.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Calculator.elf  "Calculator.hex"
+Finished building: Calculator.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Calculator.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9042 bytes (27.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Calculator.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Calculator.hex"
+avrdude: input file Calculator.hex auto detected as Intel Hex
+avrdude: writing flash (9042 bytes):
+
+Writing | ################################################## | 100% 5.99s
+
+avrdude: 9042 bytes of flash written
+avrdude: verifying flash memory against Calculator.hex:
+avrdude: load data flash data from input file Calculator.hex:
+avrdude: input file Calculator.hex auto detected as Intel Hex
+avrdude: input file Calculator.hex contains 9042 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.37s
+
+avrdude: verifying ...
+avrdude: 9042 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+20:21:54 Build Finished (took 12s.624ms)
+

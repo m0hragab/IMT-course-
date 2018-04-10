@@ -1,0 +1,7 @@
+23:54:18 **** Clean-only build of configuration Debug for project Intensity_controler ****
+make clean 
+rm -rf  Intensity_controler.hex  ./Dio.o ./LCD.o ./key_Pad_Driver.o ./main.o  avrdudedummy  sizedummy  Intensity_controler.lss  ./Dio.d ./LCD.d ./key_Pad_Driver.d ./main.d  Intensity_controler.elf
+ 
+
+23:54:18 Build Finished (took 354ms)
+

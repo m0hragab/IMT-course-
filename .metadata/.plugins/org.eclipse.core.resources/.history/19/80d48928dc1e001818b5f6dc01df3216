@@ -1,0 +1,70 @@
+/*
+ * Main.c
+ *
+ *  Created on: Mar 2, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include <util/delay.h>
+#include <util/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include "SPI_Interface.h"
+
+/*int main(void)
+{
+
+	SPI_VidMasterInit();
+	while(1)
+	{
+
+		SPI_U8MasterTransferData('a');
+		_delay_ms(1000);
+		SPI_U8MasterTransferData('b');
+		_delay_ms(1000);
+	}
+
+
+
+	return 0;
+}*/
+
+
+
+
+
+//Receiving Code
+
+int main(void)
+{
+	u8 x=0;
+	Dio_vidSetPinDirection(Dio_PORTA,0,STD_HIGH);
+	Dio_vidSetPinDirection(Dio_PORTA,1,STD_HIGH);
+	Dio_vidSetPinValue(Dio_PORTA,0,STD_LOW);
+	Dio_vidSetPinValue(Dio_PORTA,1,STD_LOW);
+	SPI_VidSlaveInit();
+	while(1)
+	{
+
+		x=SPI_U8SlaveTransferData(dummy_data);
+		if(x=='a')
+		{
+			Dio_vidSetPinValue(Dio_PORTA,0,STD_HIGH);
+			Dio_vidSetPinValue(Dio_PORTA,1,STD_lOW);
+		}
+		else if(x=='b')
+		{
+			Dio_vidSetPinValue(Dio_PORTA,1,STD_HIGH);
+		}
+
+	}
+
+
+
+	return 0;
+}
+

@@ -1,0 +1,24 @@
+/*
+ * RTO.h
+ *
+ *  Created on: Mar 16, 2018
+ *      Author: mohragab
+ */
+
+#ifndef RTO_INTERFACE_H_
+#define RTO_INTERFACE_H_
+typedef struct{
+	u32 first_delay;
+	u32 priodicity;
+	void (*ptrfun)(void);
+	u8 state;
+}TASK_TYPE;
+#define NULL ((void*)0)
+#define RTO_TASK_RUNNING 1
+#define RTO_TASK_PAUSEDN 0
+void RTO_VidInit(void);
+
+
+
+
+#endif /* RTO_INTERFACE_H_ */

@@ -1,0 +1,77 @@
+/*
+ * Main.c
+ *
+ *  Created on: Mar 2, 2018
+ *      Author: mohragab
+ */
+
+#include "Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include <util/delay.h>
+#include <util/delay.h>
+#include<avr/interrupt.h>
+#include<avr/delay.h>
+#include<avr/io.h>
+#include "UART_Interface.h"
+
+int main(void)
+{
+
+	UART_VidInit();
+	while(1)
+	{
+
+		UART_VidSendByte('a');
+		_delay_ms(1000);
+		UART_VidSendByte('b');
+		_delay_ms(1000);
+
+
+
+	}
+
+
+
+	return 0;
+}
+
+
+
+
+
+//Receiving Code
+
+
+/*int main(void)
+{
+
+	u8 u8receiving_data=0;
+	Dio_vidSetPinDirection(Dio_PORTA,0,STD_HIGH);
+	Dio_vidSetPinDirection(Dio_PORTA,1,STD_HIGH);
+	Dio_vidSetPinValue(Dio_PORTA,0,STD_LOW);
+	Dio_vidSetPinValue(Dio_PORTA,1,STD_LOW);
+
+
+	UART_VidInit();
+	while(1)
+	{
+
+		u8receiving_data=UART_U8ReceiveByte();
+		if(u8receiving_data=='a')
+		{
+			Dio_vidSetPinValue(Dio_PORTA,1,STD_HIGH);
+		}
+		_delay_ms(1000);
+		UART_VidSendByte('b');
+		_delay_ms(1000);
+
+
+
+	}
+
+
+
+	return 0;
+}*/
+

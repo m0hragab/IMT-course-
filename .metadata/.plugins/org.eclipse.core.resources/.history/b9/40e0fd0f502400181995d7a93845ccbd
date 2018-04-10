@@ -1,0 +1,23 @@
+/*
+ * EEPROM_Pro.c
+ *
+ *  Created on: Mar 10, 2018
+ *      Author: mohragab
+ */
+
+
+#include"Macros.h"
+#include"Std_Types.h"
+#include<avr/delay.h>
+#include<avr/interrupt.h>
+#include<avr/io.h>
+#include<util/delay.h>
+#include"TWI_Interface.h"
+#include"EEPROM_Interface.h"
+
+
+
+void EEPROM_VidInit(void)
+{
+
+}

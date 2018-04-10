@@ -1,0 +1,4845 @@
+23:54:18 **** Clean-only build of configuration Debug for project Intensity_controler ****
+make clean 
+rm -rf  Intensity_controler.hex  ./Dio.o ./LCD.o ./key_Pad_Driver.o ./main.o  avrdudedummy  sizedummy  Intensity_controler.lss  ./Dio.d ./LCD.d ./key_Pad_Driver.d ./main.d  Intensity_controler.elf
+ 
+23:55:00 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:111:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:42: warning: unused variable 'ENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:37: warning: unused variable 'PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:32: warning: unused variable 'j'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+../Main.c:27: warning: unused variable 'Password_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9588 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (9588 bytes):
+
+Writing | ################################################## | 100% 6.41s
+
+avrdude: 9588 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 9588 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.34s
+
+avrdude: verifying ...
+avrdude: 9588 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:14:30 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:117:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:42: warning: unused variable 'ENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:37: warning: unused variable 'PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:32: warning: unused variable 'j'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+../Main.c:27: warning: unused variable 'Password_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9834 bytes (30.0% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (9834 bytes):
+
+Writing | ################################################## | 100% 6.76s
+
+avrdude: 9834 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 9834 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.42s
+
+avrdude: verifying ...
+avrdude: 9834 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:18:51 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:117:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:42: warning: unused variable 'ENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:37: warning: unused variable 'PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:32: warning: unused variable 'j'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+../Main.c:27: warning: unused variable 'Password_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9594 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (9594 bytes):
+
+Writing | ################################################## | 100% 6.36s
+
+avrdude: 9594 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 9594 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.29s
+
+avrdude: verifying ...
+avrdude: 9594 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:20:17 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:117:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:42: warning: unused variable 'ENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:37: warning: unused variable 'PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:32: warning: unused variable 'j'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+../Main.c:27: warning: unused variable 'Password_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9834 bytes (30.0% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (9834 bytes):
+
+Writing | ################################################## | 100% 6.52s
+
+avrdude: 9834 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 9834 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.43s
+
+avrdude: verifying ...
+avrdude: 9834 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:25:49 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:128:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10242 bytes (31.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10242 bytes):
+
+Writing | ################################################## | 100% 6.81s
+
+avrdude: 10242 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10242 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.67s
+
+avrdude: verifying ...
+avrdude: 10242 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:27:10 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:128:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10242 bytes (31.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10242 bytes):
+
+Writing | ################################################## | 100% 6.87s
+
+avrdude: 10242 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10242 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.68s
+
+avrdude: verifying ...
+avrdude: 10242 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:29:08 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:129:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10244 bytes (31.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10244 bytes):
+
+Writing | ################################################## | 100% 6.86s
+
+avrdude: 10244 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10244 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.67s
+
+avrdude: verifying ...
+avrdude: 10244 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:30:50 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c:130:3: warning: "/*" within comment
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:43: warning: unused variable 'REENTER_PASSWORD'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:33: warning: unused variable 'n'
+../Main.c:29: warning: unused variable 'block_flag'
+../Main.c:28: warning: unused variable 'check_PASSWORD_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10244 bytes (31.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10244 bytes):
+
+Writing | ################################################## | 100% 6.82s
+
+avrdude: 10244 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10244 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.69s
+
+avrdude: verifying ...
+avrdude: 10244 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:37:00 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10892 bytes (33.2% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10892 bytes):
+
+Writing | ################################################## | 100% 7.25s
+
+avrdude: 10892 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10892 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.04s
+
+avrdude: verifying ...
+avrdude: 10892 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:37:40 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10892 bytes (33.2% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10892 bytes):
+
+Writing | ################################################## | 100% 7.26s
+
+avrdude: 10892 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10892 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.07s
+
+avrdude: verifying ...
+avrdude: 10892 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:39:00 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10898 bytes (33.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10898 bytes):
+
+Writing | ################################################## | 100% 7.35s
+
+avrdude: 10898 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10898 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.02s
+
+avrdude: verifying ...
+avrdude: 10898 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:40:22 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10904 bytes (33.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10904 bytes):
+
+Writing | ################################################## | 100% 7.27s
+
+avrdude: 10904 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10904 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.05s
+
+avrdude: verifying ...
+avrdude: 10904 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:42:35 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10898 bytes (33.3% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10898 bytes):
+
+Writing | ################################################## | 100% 7.25s
+
+avrdude: 10898 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10898 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.05s
+
+avrdude: verifying ...
+avrdude: 10898 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:43:19 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10892 bytes (33.2% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10892 bytes):
+
+Writing | ################################################## | 100% 7.24s
+
+avrdude: 10892 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10892 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.03s
+
+avrdude: verifying ...
+avrdude: 10892 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:45:20 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10912 bytes (33.3% Full)
+(.text + .data + .bootloader)
+
+Data:         56 bytes (2.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (10912 bytes):
+
+Writing | ################################################## | 100% 7.28s
+
+avrdude: 10912 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 10912 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.06s
+
+avrdude: verifying ...
+avrdude: 10912 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:48:26 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11652 bytes (35.6% Full)
+(.text + .data + .bootloader)
+
+Data:         56 bytes (2.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11652 bytes):
+
+Writing | ################################################## | 100% 7.75s
+
+avrdude: 11652 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11652 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.46s
+
+avrdude: verifying ...
+avrdude: 11652 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:50:05 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:48: warning: unused variable 'Confirmation'
+../Main.c:47: warning: unused variable 'compare2'
+../Main.c:46: warning: unused variable 'compare1'
+../Main.c:45: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:40: warning: unused variable 'EEPROM_ID'
+../Main.c:39: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:38: warning: unused variable 'check_PASSWORD'
+../Main.c:35: warning: unused variable 'R'
+../Main.c:34: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11642 bytes (35.5% Full)
+(.text + .data + .bootloader)
+
+Data:         54 bytes (2.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11642 bytes):
+
+Writing | ################################################## | 100% 7.76s
+
+avrdude: 11642 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11642 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.42s
+
+avrdude: verifying ...
+avrdude: 11642 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:54:33 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11830 bytes (36.1% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11830 bytes):
+
+Writing | ################################################## | 100% 7.86s
+
+avrdude: 11830 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11830 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.62s
+
+avrdude: verifying ...
+avrdude: 11830 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+00:55:42 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11836 bytes (36.1% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11836 bytes):
+
+Writing | ################################################## | 100% 7.83s
+
+avrdude: 11836 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11836 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.60s
+
+avrdude: verifying ...
+avrdude: 11836 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:17:00 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11810 bytes (36.0% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11810 bytes):
+
+Writing | ################################################## | 100% 7.82s
+
+avrdude: 11810 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11810 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.59s
+
+avrdude: verifying ...
+avrdude: 11810 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:22:15 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11786 bytes (36.0% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11786 bytes):
+
+Writing | ################################################## | 100% 7.84s
+
+avrdude: 11786 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11786 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.57s
+
+avrdude: verifying ...
+avrdude: 11786 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:24:20 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11836 bytes (36.1% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11836 bytes):
+
+Writing | ################################################## | 100% 7.96s
+
+avrdude: 11836 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11836 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.63s
+
+avrdude: verifying ...
+avrdude: 11836 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:28:51 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:31: warning: unused variable 'line'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11834 bytes (36.1% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (11834 bytes):
+
+Writing | ################################################## | 100% 7.86s
+
+avrdude: 11834 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 11834 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.61s
+
+avrdude: verifying ...
+avrdude: 11834 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:30:54 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:49: warning: unused variable 'Confirmation'
+../Main.c:48: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'compare1'
+../Main.c:46: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:41: warning: unused variable 'EEPROM_ID'
+../Main.c:40: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:39: warning: unused variable 'check_PASSWORD'
+../Main.c:36: warning: unused variable 'R'
+../Main.c:35: warning: unused variable 'W'
+../Main.c:31: warning: unused variable 'line'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12198 bytes (37.2% Full)
+(.text + .data + .bootloader)
+
+Data:         62 bytes (3.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12198 bytes):
+
+Writing | ################################################## | 100% 8.07s
+
+avrdude: 12198 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12198 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.77s
+
+avrdude: verifying ...
+avrdude: 12198 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:36:59 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12450 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12450 bytes):
+
+Writing | ################################################## | 100% 8.26s
+
+avrdude: 12450 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12450 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.96s
+
+avrdude: verifying ...
+avrdude: 12450 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:37:51 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12450 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12450 bytes):
+
+Writing | ################################################## | 100% 8.24s
+
+avrdude: 12450 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12450 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.96s
+
+avrdude: verifying ...
+avrdude: 12450 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:43:13 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12038 bytes):
+
+Writing | ################################################## | 100% 8.04s
+
+avrdude: 12038 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12038 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.73s
+
+avrdude: verifying ...
+avrdude: 12038 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:44:54 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12064 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12064 bytes):
+
+Writing | ################################################## | 100% 7.97s
+
+avrdude: 12064 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12064 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.73s
+
+avrdude: verifying ...
+avrdude: 12064 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:46:03 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12064 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12064 bytes):
+
+Writing | ################################################## | 100% 7.99s
+
+avrdude: 12064 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12064 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.70s
+
+avrdude: verifying ...
+avrdude: 12064 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:48:16 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12070 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12070 bytes):
+
+Writing | ################################################## | 100% 8.02s
+
+avrdude: 12070 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12070 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.75s
+
+avrdude: verifying ...
+avrdude: 12070 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:50:27 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12070 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12070 bytes):
+
+Writing | ################################################## | 100% 8.00s
+
+avrdude: 12070 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12070 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.74s
+
+avrdude: verifying ...
+avrdude: 12070 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:51:17 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12070 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12070 bytes):
+
+Writing | ################################################## | 100% 7.98s
+
+avrdude: 12070 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12070 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.74s
+
+avrdude: verifying ...
+avrdude: 12070 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:54:18 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12070 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12070 bytes):
+
+Writing | ################################################## | 100% 8.09s
+
+avrdude: 12070 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12070 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.74s
+
+avrdude: verifying ...
+avrdude: 12070 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:57:21 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12456 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12456 bytes):
+
+Writing | ################################################## | 100% 8.27s
+
+avrdude: 12456 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12456 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.96s
+
+avrdude: verifying ...
+avrdude: 12456 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+01:58:57 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12870 bytes (39.3% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12870 bytes):
+
+Writing | ################################################## | 100% 8.52s
+
+avrdude: 12870 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12870 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.16s
+
+avrdude: verifying ...
+avrdude: 12870 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+02:03:28 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../Main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Main.c: In function 'main':
+../Main.c:50: warning: unused variable 'Confirmation'
+../Main.c:49: warning: unused variable 'compare2'
+../Main.c:47: warning: unused variable 'EEPROM_Receivedata'
+../Main.c:42: warning: unused variable 'EEPROM_ID'
+../Main.c:41: warning: unused variable 'EEPROM_PASSWORD'
+../Main.c:37: warning: unused variable 'R'
+../Main.c:36: warning: unused variable 'W'
+../Main.c:29: warning: unused variable 'block_flag'
+Finished building: ../Main.c
+ 
+Building target: Password.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Password.map -mmcu=atmega32 -o "Password.elf"  ./Dio.o ./EEPROM_Pro.o ./LCD_pro.o ./Main.o ./TWI_Pro.o ./key_PAD_pro.o   
+Finished building target: Password.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Password.elf  >"Password.lss"
+Finished building: Password.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Password.elf  "Password.hex"
+Finished building: Password.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Password.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12070 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:         74 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Password.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Password.hex"
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: writing flash (12070 bytes):
+
+Writing | ################################################## | 100% 8.03s
+
+avrdude: 12070 bytes of flash written
+avrdude: verifying flash memory against Password.hex:
+avrdude: load data flash data from input file Password.hex:
+avrdude: input file Password.hex auto detected as Intel Hex
+avrdude: input file Password.hex contains 12070 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.73s
+
+avrdude: verifying ...
+avrdude: 12070 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:09:04 **** Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../Dio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Dio.d" -MT"Dio.o" -c -o "Dio.o" "../Dio.c"
+Finished building: ../Dio.c
+ 
+Building file: ../croutine.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"croutine.d" -MT"croutine.o" -c -o "croutine.o" "../croutine.c"
+Finished building: ../croutine.c
+ 
+Building file: ../heap_1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"heap_1.d" -MT"heap_1.o" -c -o "heap_1.o" "../heap_1.c"
+Finished building: ../heap_1.c
+ 
+Building file: ../list.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"list.d" -MT"list.o" -c -o "list.o" "../list.c"
+Finished building: ../list.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:18: error: too few arguments to function 'led_blink'
+../main.c:18: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+make: *** [main.o] Error 1
+13:09:55 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:18: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building file: ../port.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"port.d" -MT"port.o" -c -o "port.o" "../port.c"
+Finished building: ../port.c
+ 
+Building file: ../queue.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"queue.d" -MT"queue.o" -c -o "queue.o" "../queue.c"
+Finished building: ../queue.c
+ 
+Building file: ../tasks.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"tasks.d" -MT"tasks.o" -c -o "tasks.o" "../tasks.c"
+../tasks.c: In function 'xTaskGenericCreate':
+../tasks.c:470: warning: cast from pointer to integer of different size
+../tasks.c:470: warning: cast to pointer from integer of different size
+Finished building: ../tasks.c
+ 
+Building file: ../timers.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timers.d" -MT"timers.o" -c -o "timers.o" "../timers.c"
+Finished building: ../timers.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11602 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11602 bytes):
+
+Writing | ################################################## | 100% 7.74s
+
+avrdude: 11602 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11602 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.83s
+
+avrdude: verifying ...
+avrdude: 11602 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:12:12 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11602 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11602 bytes):
+
+Writing | ################################################## | 100% 7.68s
+
+avrdude: 11602 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11602 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.89s
+
+avrdude: verifying ...
+avrdude: 11602 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:12:54 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:18: error: too few arguments to function 'led_blink'
+../main.c:18: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+make: *** [main.o] Error 1
+13:13:01 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:18: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11602 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11602 bytes):
+
+Writing | ################################################## | 100% 7.69s
+
+avrdude: 11602 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11602 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.84s
+
+avrdude: verifying ...
+avrdude: 11602 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:14:57 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11602 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11602 bytes):
+
+Writing | ################################################## | 100% 7.68s
+
+avrdude: 11602 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11602 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.88s
+
+avrdude: verifying ...
+avrdude: 11602 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:15:38 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11602 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11602 bytes):
+
+Writing | ################################################## | 100% 7.65s
+
+avrdude: 11602 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11602 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.85s
+
+avrdude: verifying ...
+avrdude: 11602 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:19:11 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:18: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11608 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11608 bytes):
+
+Writing | ################################################## | 100% 7.77s
+
+avrdude: 11608 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11608 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.86s
+
+avrdude: verifying ...
+avrdude: 11608 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:23:04 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11616 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11616 bytes):
+
+Writing | ################################################## | 100% 7.73s
+
+avrdude: 11616 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11616 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.89s
+
+avrdude: verifying ...
+avrdude: 11616 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:23:50 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11610 bytes (35.4% Full)
+(.text + .data + .bootloader)
+
+Data:        869 bytes (42.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (11610 bytes):
+
+Writing | ################################################## | 100% 7.71s
+
+avrdude: 11610 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 11610 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.86s
+
+avrdude: verifying ...
+avrdude: 11610 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:25:02 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../croutine.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"croutine.d" -MT"croutine.o" -c -o "croutine.o" "../croutine.c"
+Finished building: ../croutine.c
+ 
+Building file: ../heap_1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"heap_1.d" -MT"heap_1.o" -c -o "heap_1.o" "../heap_1.c"
+Finished building: ../heap_1.c
+ 
+Building file: ../list.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"list.d" -MT"list.o" -c -o "list.o" "../list.c"
+Finished building: ../list.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building file: ../port.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"port.d" -MT"port.o" -c -o "port.o" "../port.c"
+Finished building: ../port.c
+ 
+Building file: ../queue.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"queue.d" -MT"queue.o" -c -o "queue.o" "../queue.c"
+Finished building: ../queue.c
+ 
+Building file: ../tasks.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"tasks.d" -MT"tasks.o" -c -o "tasks.o" "../tasks.c"
+../tasks.c: In function 'xTaskGenericCreate':
+../tasks.c:470: warning: cast from pointer to integer of different size
+../tasks.c:470: warning: cast to pointer from integer of different size
+Finished building: ../tasks.c
+ 
+Building file: ../timers.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timers.d" -MT"timers.o" -c -o "timers.o" "../timers.c"
+Finished building: ../timers.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12572 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12572 bytes):
+
+Writing | ################################################## | 100% 8.33s
+
+avrdude: 12572 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12572 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.42s
+
+avrdude: verifying ...
+avrdude: 12572 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:25:29 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12578 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12578 bytes):
+
+Writing | ################################################## | 100% 8.38s
+
+avrdude: 12578 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12578 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.40s
+
+avrdude: verifying ...
+avrdude: 12578 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:26:32 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+../main.c: In function 'led_blink':
+../main.c:27: warning: unused variable 'priodicity'
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12570 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12570 bytes):
+
+Writing | ################################################## | 100% 8.37s
+
+avrdude: 12570 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12570 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.44s
+
+avrdude: verifying ...
+avrdude: 12570 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:27:40 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+../main.c: In function 'led_blink':
+../main.c:27: warning: unused variable 'priodicity'
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12564 bytes (38.3% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12564 bytes):
+
+Writing | ################################################## | 100% 8.33s
+
+avrdude: 12564 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12564 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.38s
+
+avrdude: verifying ...
+avrdude: 12564 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:47:31 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:41: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12578 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12578 bytes):
+
+Writing | ################################################## | 100% 8.36s
+
+avrdude: 12578 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12578 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.41s
+
+avrdude: verifying ...
+avrdude: 12578 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:48:05 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12578 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12578 bytes):
+
+Writing | ################################################## | 100% 8.33s
+
+avrdude: 12578 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12578 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.43s
+
+avrdude: verifying ...
+avrdude: 12578 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+13:52:23 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:19: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+../main.c: In function 'led_blink':
+../main.c:27: warning: unused variable 'priodicity'
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12564 bytes (38.3% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12564 bytes):
+
+Writing | ################################################## | 100% 8.48s
+
+avrdude: 12564 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12564 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.41s
+
+avrdude: verifying ...
+avrdude: 12564 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+14:12:53 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:41: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12572 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12572 bytes):
+
+Writing | ################################################## | 100% 8.30s
+
+avrdude: 12572 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12572 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.46s
+
+avrdude: verifying ...
+avrdude: 12572 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+14:13:45 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:41: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12572 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12572 bytes):
+
+Writing | ################################################## | 100% 8.33s
+
+avrdude: 12572 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12572 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.42s
+
+avrdude: verifying ...
+avrdude: 12572 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+14:14:27 **** Incremental Build of configuration Debug for project RTOS_BLINK_LED ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:41: warning: pointer targets in passing argument 2 of 'xTaskGenericCreate' differ in signedness
+Finished building: ../main.c
+ 
+Building target: RTOS_BLINK_LED.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_BLINK_LED.map -mmcu=atmega32 -o "RTOS_BLINK_LED.elf"  ./Dio.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_BLINK_LED.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_BLINK_LED.elf  >"RTOS_BLINK_LED.lss"
+Finished building: RTOS_BLINK_LED.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_BLINK_LED.elf  "RTOS_BLINK_LED.hex"
+Finished building: RTOS_BLINK_LED.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_BLINK_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12572 bytes (38.4% Full)
+(.text + .data + .bootloader)
+
+Data:        927 bytes (45.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_BLINK_LED.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_BLINK_LED.hex"
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: writing flash (12572 bytes):
+
+Writing | ################################################## | 100% 8.46s
+
+avrdude: 12572 bytes of flash written
+avrdude: verifying flash memory against RTOS_BLINK_LED.hex:
+avrdude: load data flash data from input file RTOS_BLINK_LED.hex:
+avrdude: input file RTOS_BLINK_LED.hex auto detected as Intel Hex
+avrdude: input file RTOS_BLINK_LED.hex contains 12572 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 7.23s
+
+avrdude: verifying ...
+avrdude: 12572 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+11:39:44 **** Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     130 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+11:51:53 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     146 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          1 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+11:52:32 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     146 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+11:54:40 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     170 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          4 bytes (0.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+11:55:19 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13: warning: type defaults to 'int' in declaration of 'c'
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     172 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+11:55:30 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     172 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+11:56:26 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     154 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+12:11:56 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     154 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+12:14:55 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     154 bytes (0.5% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+13:17:29 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     186 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+13:20:16 **** Incremental Build of configuration Debug for project Tooling ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Tooling.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Tooling.map -mmcu=atmega32 -o "Tooling.elf"  ./main.o   
+Finished building target: Tooling.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Tooling.elf  >"Tooling.lss"
+Finished building: Tooling.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Tooling.elf  "Tooling.hex"
+Finished building: Tooling.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tooling.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     186 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Tooling.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1

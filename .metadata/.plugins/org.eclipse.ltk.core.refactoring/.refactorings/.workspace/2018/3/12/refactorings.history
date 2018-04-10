@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;RTOS_LED_BLINKING&apos;" deleteContents="false" description="Delete resource &apos;RTOS_LED_BLINKING&apos;" element1="/RTOS_LED_BLINKING" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1521792123593"/>
+</session>

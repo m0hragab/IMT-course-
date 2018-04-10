@@ -1,0 +1,35 @@
+21:08:26 **** Incremental Build of configuration Debug for project KEYPAD_Driver_last ****
+make all 
+Building file: ../key_PAD_pro.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"key_PAD_pro.d" -MT"key_PAD_pro.o" -c -o "key_PAD_pro.o" "../key_PAD_pro.c"
+../key_PAD_pro.c: In function 'KEYPAD_u8GetKey':
+../key_PAD_pro.c:47: warning: implicit declaration of function 'DIO_vidSetPinValue'
+../key_PAD_pro.c:47: warning: implicit declaration of function 'GET_BIT'
+../key_PAD_pro.c:52: warning: implicit declaration of function 'DIO_u8GetPinValue'
+Finished building: ../key_PAD_pro.c
+ 
+Building target: KEYPAD_Driver_last.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,KEYPAD_Driver_last.map -mmcu=atmega32 -o "KEYPAD_Driver_last.elf"  ./Dio.o ./LCD_pro.o ./key_PAD_pro.o ./main.o   
+./key_PAD_pro.o: In function `KEYPAD_vidInit':
+../key_PAD_pro.c:22: undefined reference to `GET_BIT'
+../key_PAD_pro.c:25: undefined reference to `DIO_vidSetPinValue'
+../key_PAD_pro.c:26: undefined reference to `GET_BIT'
+../key_PAD_pro.c:29: undefined reference to `DIO_vidSetPinValue'
+../key_PAD_pro.c:31: undefined reference to `GET_BIT'
+../key_PAD_pro.c:35: undefined reference to `DIO_vidSetPinValue'
+../key_PAD_pro.c:35: undefined reference to `GET_BIT'
+../key_PAD_pro.c:35: undefined reference to `DIO_vidSetPinValue'
+../key_PAD_pro.c:35: undefined reference to `DIO_u8GetPinValue'
+../key_PAD_pro.c:35: undefined reference to `DIO_u8GetPinValue'
+../key_PAD_pro.c:35: undefined reference to `DIO_u8GetPinValue'
+../key_PAD_pro.c:35: undefined reference to `DIO_u8GetPinValue'
+./main.o: In function `main':
+../main.c:19: undefined reference to `keypad_vidinit'
+../main.c:28: undefined reference to `key_PAD_U8Get_Key'
+../main.c:30: undefined reference to `key_PAD_U8Get_Key'
+make: *** [KEYPAD_Driver_last.elf] Error 1
+
+21:08:26 Build Finished (took 644ms)
+

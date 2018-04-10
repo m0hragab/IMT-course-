@@ -1,0 +1,7 @@
+21:03:50 **** Clean-only build of configuration Debug for project led ****
+make clean 
+rm -rf  led.hex  ./led.o  avrdudedummy  sizedummy  led.lss  ./led.d  led.elf
+ 
+
+21:03:50 Build Finished (took 378ms)
+

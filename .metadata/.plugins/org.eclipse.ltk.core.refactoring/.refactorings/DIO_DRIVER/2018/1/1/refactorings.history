@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DIO_DRIVER/led.h&apos; to &apos;DIO.h&apos;" description="Rename resource &apos;led.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="led.h" name="DIO.h" stamp="1515226107842" updateReferences="true"/>
+</session>

@@ -1,0 +1,25 @@
+/*
+ * keyPad.c
+ *
+ *  Created on: Jan 12, 2018
+ *      Author: mohragab
+ */
+#include"Dio.h"
+#include "Macros.h"
+#include "Std_Types.h"
+#include "util/delay.h"
+#include "LCD.h"
+#include<avr/delay.h>
+#include"Key_Pad_Driver.h"
+#define F_CPU 8000000
+
+int main(void)
+{
+	Lcd_vidInit();
+
+	return 0;
+}
+
+
+
+
