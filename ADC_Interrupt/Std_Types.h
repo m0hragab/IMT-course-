@@ -14,7 +14,7 @@
 typedef char s8;
 typedef unsigned char u8;
 typedef double f64;
-typedef float f16;
+typedef float f32;
 typedef short int s16;
 typedef unsigned short int u16;
 typedef unsigned long int u32;
